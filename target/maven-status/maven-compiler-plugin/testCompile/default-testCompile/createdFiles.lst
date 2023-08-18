@@ -1,0 +1,5 @@
+org\example\office\controller\OfficeControllerMockMvcIntegrationTest.class
+org\example\post\service\PostServiceImplTest.class
+org\example\office\service\OfficeServiceImplTest.class
+org\example\post\controller\PostControllerMockMvcIntegrationTest.class
+org\example\visit\controller\VisitControllerMockMvcIntegrationTest.class
