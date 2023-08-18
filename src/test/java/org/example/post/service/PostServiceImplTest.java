@@ -1,8 +1,6 @@
 package org.example.post.service;
 
-import org.example.exception.ConflictException;
 import org.example.exception.NotFoundException;
-import org.example.office.model.Office;
 import org.example.post.dao.PostRepository;
 import org.example.post.model.Post;
 import org.example.post.model.Status;

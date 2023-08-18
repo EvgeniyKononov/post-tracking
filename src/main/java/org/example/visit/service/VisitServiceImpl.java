@@ -51,7 +51,6 @@ public class VisitServiceImpl implements VisitService {
                 .orElseThrow(() -> new NotFoundException(NOT_FOUND_VISIT_MSG));
         visit.setDeparture(LocalDateTime.now());
         Visit savedVisit = visitRepository.save(visit);
-        postService.changePostStatus(postId, Status.IN_PATH_TO_RECEIVER);
         log.info("Saved visit  = {}", savedVisit);
         return savedVisit;
     }

@@ -1,5 +1,6 @@
 package org.example.visit.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.office.model.Office;
@@ -14,7 +15,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 @EqualsAndHashCode
 public class Visit {
     @Id
@@ -22,6 +22,7 @@ public class Visit {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "post_id", referencedColumnName = "id")
+    @JsonBackReference
     private Post post;
     @ManyToOne
     @JoinColumn(name = "index", referencedColumnName = "index")
@@ -31,4 +32,14 @@ public class Visit {
     @Column(name = "departure_date")
     private LocalDateTime departure;
 
+    @Override
+    public String toString() {
+        return "Visit{" +
+                "id=" + id +
+                ", postId=" + post.getId() +
+                ", officeIndex=" + office.getIndex() +
+                ", arrival=" + arrival +
+                ", departure=" + departure +
+                '}';
+    }
 }

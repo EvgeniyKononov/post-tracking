@@ -1,5 +1,6 @@
 package org.example.post.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -31,6 +32,7 @@ public class Post {
     private String name;
     @Enumerated(EnumType.STRING)
     private Status status;
-    @OneToMany(mappedBy = "post")
-    private List <Visit> visits;
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Visit> visits;
 }

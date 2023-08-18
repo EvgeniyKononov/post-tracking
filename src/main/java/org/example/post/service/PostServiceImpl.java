@@ -15,7 +15,7 @@ import static org.example.constant.Constant.NOT_FOUND_POST_ID_MSG;
 
 @Service
 @Slf4j
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
 
     @Autowired

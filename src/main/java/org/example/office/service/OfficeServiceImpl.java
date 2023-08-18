@@ -13,13 +13,14 @@ import static org.example.constant.Constant.DUPLICATE_INDEX_MSG;
 
 @Service
 @Slf4j
-public class OfficeServiceImpl implements OfficeService{
+public class OfficeServiceImpl implements OfficeService {
     private final OfficeRepository officeRepository;
 
     @Autowired
-    public OfficeServiceImpl (OfficeRepository officeRepository){
+    public OfficeServiceImpl(OfficeRepository officeRepository) {
         this.officeRepository = officeRepository;
     }
+
     @Override
     public Office createOffice(Office office) {
         checkIndex(office.getIndex());
